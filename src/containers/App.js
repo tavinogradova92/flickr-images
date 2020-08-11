@@ -1,7 +1,7 @@
 import React from 'react';
-import CardList from './CardList';
-import SearchBox from './SearchBox';
-import Scroll from './Scroll';
+import CardList from '../components/CardList';
+import SearchBox from '../components/SearchBox';
+import Scroll from '../components/Scroll';
 import './App.css';
 
 class App extends React.Component {
@@ -29,10 +29,11 @@ class App extends React.Component {
     }
 
     render() {
-        const filteredPhotos = this.state.photos.filter(photos => {
-            return photos.title.toLowerCase().includes(this.state.searchfield.toLowerCase());
+        const { photos, searchfield } = this.state;
+        const filteredPhotos = photos.filter(photo => {
+            return photo.title.toLowerCase().includes(searchfield.toLowerCase());
         })
-        if (this.state.photos.length === 0) {
+        if (!photos.length) {
             return <h1>Loading...</h1>
         } else {
             return (
