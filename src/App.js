@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from './flickr.svg';
 import './App.css';
 
 function App() {
@@ -8,15 +8,15 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Hi there. There will be Flickr images library here.
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://www.flickr.com/services/feeds/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Find the API
         </a>
       </header>
     </div>
