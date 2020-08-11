@@ -1,6 +1,7 @@
 import React from 'react';
 import CardList from './CardList';
 import SearchBox from './SearchBox';
+import Scroll from './Scroll';
 import './App.css';
 
 class App extends React.Component {
@@ -31,15 +32,20 @@ class App extends React.Component {
         const filteredPhotos = this.state.photos.filter(photos => {
             return photos.title.toLowerCase().includes(this.state.searchfield.toLowerCase());
         })
-        return (
-            <div className='tc'>
-                <h1 className='f1'>Flickr Gallery Imitator</h1>
-                <SearchBox searchChange={this.onSearchChange} />
-                <CardList photos={filteredPhotos}/>
-            </div>
-        );
-    }
-    
+        if (this.state.photos.length === 0) {
+            return <h1>Loading...</h1>
+        } else {
+            return (
+                <div className='tc'>
+                    <h1 className='f1'>Flickr Gallery Imitator</h1>
+                    <SearchBox searchChange={this.onSearchChange} />
+                    <Scroll>
+                        <CardList photos={filteredPhotos}/>
+                    </Scroll>
+                </div>
+            );
+        }
+    } 
 }
 
 export default App;
