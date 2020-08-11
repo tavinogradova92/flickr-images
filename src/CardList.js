@@ -8,10 +8,10 @@ const CardList = ({ photos }) => {
                     photos.map((user, i) => {
                         return (
                             <Card 
-                                key={i} 
+                                key={i}
+                                url={photos[i].url} 
                                 id={photos[i].id} 
-                                name={photos[i].name} 
-                                email={photos[i].email}
+                                title={photos[i].title}
                             />
                         );
                     })
