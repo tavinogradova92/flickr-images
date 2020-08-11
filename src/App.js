@@ -2,6 +2,7 @@ import React from 'react';
 import CardList from './CardList';
 import SearchBox from './SearchBox';
 import { photos } from './photos';
+import './App.css';
 
 class App extends React.Component {
     constructor() {
@@ -23,7 +24,7 @@ class App extends React.Component {
         })
         return (
             <div className='tc'>
-                <h1>Flickr Gallery Imitator</h1>
+                <h1 className='f1'>Flickr Gallery Imitator</h1>
                 <SearchBox searchChange={this.onSearchChange} />
                 <CardList photos={filteredPhotos}/>
             </div>

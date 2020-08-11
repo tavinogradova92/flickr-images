@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Republiko Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Republiko Regular'), url('Republiko-x3nJ0.woff') format('woff');
+    }
+h1 {
+    font-family: 'Republiko Regular';
+    font-weight: 200;
+    color: #333300;
+}
