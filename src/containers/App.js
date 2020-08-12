@@ -9,18 +9,19 @@ class App extends React.Component {
     constructor() {
         super()
         this.state = {
-            photos: [],
+            photographs: {},
             searchfield: ''
         }
     }
 
     componentDidMount() {
-        fetch('https://jsonplaceholder.typicode.com/photos')
+        
+        fetch('https://www.flickr.com/services/rest/?method=flickr.galleries.getPhotos&api_key=5864e80be4c75fc9597008ec8128e491&gallery_id=72157715438869218&format=json&nojsoncallback=1&api_sig=893a3d8b75616dd3cec20c216ca7e6e0')
         .then(response => {
             return response.json();
         })
-        .then(photos => {
-            this.setState({ photos: photos })
+        .then(photographs => {
+            this.setState({ photographs: photographs })
         })
         
     }
@@ -30,11 +31,16 @@ class App extends React.Component {
     }
 
     render() {
-        const { photos, searchfield } = this.state;
-        const filteredPhotos = photos.filter(photo => {
-            return photo.title.toLowerCase().includes(searchfield.toLowerCase());
+        
+        const { photographs, searchfield } = this.state;
+
+
+        const filteredPhotos = photographs.photos.photo.filter(i => {
+            return i.title.toLowerCase().includes(searchfield.toLowerCase());
         })
-        if (!photos.length) {
+        
+        
+        if (!photographs.length) {
             return <h1>Loading...</h1>
         } else {
             return (
@@ -49,6 +55,9 @@ class App extends React.Component {
                 </div>
             );
         }
+        
+        
+    
     } 
 }
 

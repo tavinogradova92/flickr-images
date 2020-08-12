@@ -1,17 +1,17 @@
 import React from 'react';
 import Card from './Card';
 
-const CardList = ({ photos }) => {
+const CardList = ({ photographs }) => {
         return (
             <div>
                 {
-                    photos.map((user, i) => {
+                    photographs.map((user, i) => {
                         return (
                             <Card 
                                 key={i}
-                                url={photos[i].url} 
-                                id={photos[i].id} 
-                                title={photos[i].title}
+                                url={`https://www.flickr.com/photos/bowside/${photographs.photos.photo[i].id}/in/gallery-flickr-72157715438869218/`} 
+                                id={photographs.photos.photo[i].id} 
+                                title={photographs.photos.photo[i].title}
                             />
                         );
                     })
