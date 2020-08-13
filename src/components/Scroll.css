@@ -1,7 +1,7 @@
 .scrollable {
     margin-top: 2em;
     overflow-y: scroll;
-    height: 40em;
+    max-height: 60vh;
 }
 
 ::-webkit-scrollbar {

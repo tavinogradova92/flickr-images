@@ -50,7 +50,7 @@ class App extends React.Component {
             console.log(filteredPhotos)
             return (
                 <div className='tc'>
-                    <h1 className='f1'>Flickr Gallery Imitator</h1>
+                    <h1 className='f3 f2-m f1-l'>Flickr Gallery Imitator</h1>
                     <SearchBox searchChange={this.onSearchChange} />
                     <Scroll>
                         <ErrorBoundry>

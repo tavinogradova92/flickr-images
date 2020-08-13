@@ -1,8 +1,4 @@
-
-  
-  
-
-  /* Create four equal columns that sits next to each other */
+ /* Create four equal columns that sits next to each other */
   .column {
     display: -ms-flexbox; /* IE10 */
     display: flex;
