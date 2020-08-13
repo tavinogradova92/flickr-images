@@ -3,16 +3,12 @@ import './Card.css';
 
 const Card = ({title, id, url }) => {
     return (
-        <div className='column dib ma2 grow  shadow-5'>
-        
+        <div className='column dib ma2 grow shadow-5'>
             <img   
                 alt={title}  
                 src={url}
             />
-    
-       
         </div>
-        
     );
 }
 
