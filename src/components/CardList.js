@@ -1,17 +1,18 @@
 import React from 'react';
 import Card from './Card';
 
-const CardList = ({ photographs }) => {
+const CardList = ({ photos_arr }) => {
+
         return (
             <div>
                 {
-                    photographs.map((user, i) => {
+                    photos_arr.map((user, i) => {
                         return (
                             <Card 
                                 key={i}
-                                url={`https://www.flickr.com/photos/bowside/${photographs.photos.photo[i].id}/in/gallery-flickr-72157715438869218/`} 
-                                id={photographs.photos.photo[i].id} 
-                                title={photographs.photos.photo[i].title}
+                                url={`https://farm${photos_arr[i].farm}.staticflickr.com/${photos_arr[i].server}/${photos_arr[i].id}_${photos_arr[i].secret}.jpg`} 
+                                id={photos_arr[i].id} 
+                                title={photos_arr[i].title}
                             />
                         );
                     })

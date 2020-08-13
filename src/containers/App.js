@@ -9,23 +9,21 @@ class App extends React.Component {
     constructor() {
         super()
         this.state = {
-            photographs: {},
-            searchfield: ''
+              photographs: {}
+            , searchfield: ''
         }
     }
 
-    componentDidMount() {
-        
-        fetch('https://www.flickr.com/services/rest/?method=flickr.galleries.getPhotos&api_key=5864e80be4c75fc9597008ec8128e491&gallery_id=72157715438869218&format=json&nojsoncallback=1&api_sig=893a3d8b75616dd3cec20c216ca7e6e0')
+    componentDidMount(){
+        fetch('https://www.flickr.com/services/rest/?method=flickr.galleries.getPhotos&api_key=fd480d49ddad70072e137f3b8ad1f8c1&gallery_id=72157715438869218&format=json&nojsoncallback=1')
         .then(response => {
             return response.json();
         })
         .then(photographs => {
             this.setState({ photographs: photographs })
         })
-        
     }
-    
+
     onSearchChange = (event) => {
         this.setState({ searchfield: event.target.value })
     }
@@ -33,31 +31,35 @@ class App extends React.Component {
     render() {
         
         const { photographs, searchfield } = this.state;
+        console.log('Knock knock!')
+        console.log(photographs)
+        if (!photographs.hasOwnProperty('photos') ) {
+            return <h1>Loading Data...</h1>
+        }
 
-
-        const filteredPhotos = photographs.photos.photo.filter(i => {
+        const photos_arr = photographs.photos.photo;
+       
+        const filteredPhotos = photos_arr.filter(i => {
             return i.title.toLowerCase().includes(searchfield.toLowerCase());
         })
-        
-        
-        if (!photographs.length) {
+     
+        if (!photos_arr.length) {
             return <h1>Loading...</h1>
         } else {
+            console.log('Print filtered')
+            console.log(filteredPhotos)
             return (
                 <div className='tc'>
                     <h1 className='f1'>Flickr Gallery Imitator</h1>
                     <SearchBox searchChange={this.onSearchChange} />
                     <Scroll>
                         <ErrorBoundry>
-                            <CardList photos={filteredPhotos}/>
+                            <CardList photos_arr={filteredPhotos}/>
                         </ErrorBoundry>
                     </Scroll>
                 </div>
             );
         }
-        
-        
-    
     } 
 }
 
