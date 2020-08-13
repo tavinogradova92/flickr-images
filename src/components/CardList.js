@@ -10,8 +10,7 @@ const CardList = ({ photos_arr }) => {
                         return (
                             <Card 
                                 key={i}
-                                url={`https://farm${photos_arr[i].farm}.staticflickr.com/${photos_arr[i].server}/${photos_arr[i].id}_${photos_arr[i].secret}.jpg`} 
-                                id={photos_arr[i].id} 
+                                url={`https://farm${photos_arr[i].farm}.staticflickr.com/${photos_arr[i].server}/${photos_arr[i].id}_${photos_arr[i].secret}.jpg`}
                                 title={photos_arr[i].title}
                             />
                         );

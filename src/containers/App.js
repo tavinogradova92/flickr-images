@@ -15,7 +15,7 @@ class App extends React.Component {
     }
 
     componentDidMount(){
-        fetch('https://www.flickr.com/services/rest/?method=flickr.galleries.getPhotos&api_key=fd480d49ddad70072e137f3b8ad1f8c1&gallery_id=72157715438869218&format=json&nojsoncallback=1')
+        fetch('https://www.flickr.com/services/rest/?method=flickr.galleries.getPhotos&api_key=fd480d49ddad70072e137f3b8ad1f8c1&gallery_id=72157713471498036&format=json&nojsoncallback=1')
         .then(response => {
             return response.json();
         })

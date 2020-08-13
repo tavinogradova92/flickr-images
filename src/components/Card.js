@@ -4,7 +4,7 @@ import './Card.css';
 const Card = ({title, id, url }) => {
     return (
         <div 
-            className='tc dib br3 pa3 ma2 grow bw2 shadow-5'>
+            className='tc dib br3 pa2 ma2 grow bw2 shadow-5'>
                 <img   
                     alt={title}  
                     src={url} />
