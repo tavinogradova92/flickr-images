@@ -1,9 +1,6 @@
  /* Create four equal columns that sits next to each other */
   .column {
-    display: -ms-flexbox; /* IE10 */
-    display: flex;
-    -ms-flex-wrap: wrap; /* IE10 */
-    flex-wrap: wrap;
+    
     vertical-align: middle;
     max-width: 20vw;
   }
