@@ -4,13 +4,13 @@
     display: flex;
     -ms-flex-wrap: wrap; /* IE10 */
     flex-wrap: wrap;
-   
+    vertical-align: middle;
   }
   
   .column img {
     margin-top: 1px;
     vertical-align: middle;
-    width: 100%;
+    max-width: 30vw;
   }
   
   /* Responsive layout - makes a two column-layout instead of four columns */
